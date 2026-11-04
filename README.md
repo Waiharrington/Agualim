@@ -8,7 +8,7 @@ Aplicación web progresiva para registrar hidratación diaria, ver ritmo por hor
 2. Copia `.env.example` a `.env.local` y agrega la URL Supabase y la clave `anon` pública.
 3. `npm run dev`
 
-Al dejar las variables vacías, los registros se guardan en el navegador. Con Supabase configurado, la app requiere iniciar sesión por enlace de correo y guarda los registros bajo el esquema `agualim` con RLS por usuario.
+Al dejar las variables vacías, los registros se guardan en el navegador. Con Supabase configurado, la app permite iniciar sesión con contraseña, crear una cuenta sin confirmación de correo (según la configuración Auth actual del VPS) o solicitar un enlace de correo. Los registros se guardan bajo el esquema `agualim` con RLS por usuario.
 
 ## Base de datos compartida
 
