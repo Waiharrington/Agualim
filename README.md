@@ -18,4 +18,4 @@ En el VPS autohospedado, el administrador debe exponer `agualim` a PostgREST y h
 
 ## Recordatorios
 
-Los recordatorios del navegador funcionan mientras la aplicación permanece abierta. Notificaciones push fiables cuando está cerrada requieren configurar VAPID, guardar suscripciones y desplegar un servicio programado del lado de Supabase. La app no genera notificaciones repetidas a intervalos de segundos.
+Los recordatorios comienzan con la frecuencia elegida. Si no se registra agua, el aviso se repite cada 2 segundos hasta que se registre un vaso, se pause por 30 minutos o se apaguen los avisos. Puede vibrar en navegadores que admiten la API de vibración. El temporizador funciona mientras la app está abierta; el navegador puede ralentizarlo cuando queda en segundo plano y no puede garantizar esa frecuencia con la app cerrada. Push fiable con la app cerrada requiere configurar VAPID, guardar suscripciones y un servicio programado del lado del servidor.
