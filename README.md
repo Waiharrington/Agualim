@@ -8,11 +8,11 @@ Aplicación web progresiva para registrar hidratación diaria, ver ritmo por hor
 2. Copia `.env.example` a `.env.local` y agrega la URL Supabase y la clave `anon` pública.
 3. `npm run dev`
 
-Al dejar las variables vacías, los registros se guardan en el navegador. Con Supabase configurado, la app permite iniciar sesión con contraseña, crear una cuenta sin confirmación de correo (según la configuración Auth actual del VPS) o solicitar un enlace de correo. Los registros se guardan bajo el esquema `agualim` con RLS por usuario.
+Al dejar las variables vacías, los registros se guardan en el navegador. Con Supabase configurado, se entra con usuario y contraseña, sin correo. Supabase Auth protege la contraseña; `agualim.profiles` guarda solo el usuario y las cuentas se aíslan mediante RLS. El nombre se mapea a una identidad interna del dominio reservado `.invalid`, sin depender del servidor SMTP. Sin correo real no hay recuperación automática de contraseña.
 
 ## Base de datos compartida
 
-La migración está en `supabase/migrations/20261104000100_agualim_initial_schema.sql`. Usa solo el esquema `agualim`; habilita RLS en `water_logs` y cada usuario autenticado solo puede ver y cambiar sus propios registros. En el frontend se usa únicamente la clave pública `anon`.
+Las migraciones están en `supabase/migrations/`. Usan solo el esquema `agualim`; habilitan RLS en `water_logs` y `profiles`. Cada usuario autenticado solo puede acceder a sus registros y su perfil. En el frontend se usa únicamente la clave pública `anon`.
 
 En el VPS autohospedado, el administrador debe exponer `agualim` a PostgREST y habilitar los permisos de esquema/tabla para los roles apropiados. Los ajustes globales del VPS permanecen fuera de este repositorio.
 
