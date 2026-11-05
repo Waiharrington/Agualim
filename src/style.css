@@ -642,6 +642,12 @@ body:has(.login-shell){height:100dvh;min-height:100dvh;overflow:hidden;backgroun
 .login-hero{position:relative;overflow:visible}
 .login-card{position:relative;z-index:3}
 .auth-mode-login .login-character-cycle .login-character,.auth-mode-signup .signup-character-cycle .login-character{bottom:-22px}
+/* Readable mobile type and comfortable touch targets across the app. */
+@media(max-width:760px){
+  .app-shell :is(p,small,label,a,button,li,time,.eyebrow,.subhead,.today-tag,.quick-hint,.amount-copy em,.custom-row>label,.panel-unit,.chart-foot,.chart-foot>span,.hour-col>span,.log-row>span,.empty-state p,.empty-state small,.safety-note,.stat-card p,.stat-card small,.card-foot,.card-foot>span,.remaining,.text-link,.recent-reset,.journey-caption,.settings-foot,.settings-group label,.interval-row,.hours-row label,.goal-presets button,.toast,.designed-dialog>p,.mobile-nav button,.tabs button,.account-logout,.bottle-style-switch,.settings-logout,.photo-estimator p){font-size:max(14px,.875em)!important;line-height:1.35}
+  .app-shell button:not(.icon-button):not(.password-visibility){min-height:44px}
+  .login-shell .login-card-heading>p,.login-shell .login-toggle{font-size:max(14px,.875em)!important;line-height:1.4}
+}
 .account-logout:hover{border-color:#e9a4c2;background:#ffeaf2;color:#953d68}
 .settings-logout{width:100%;min-height:45px;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:18px;padding:10px 14px;border:1px solid #efcddd;border-radius:14px;background:#fff7fa;color:#a84974;font-size:12px;font-weight:800}
 .settings-logout:hover{border-color:#e9a4c2;background:#ffedf4;box-shadow:0 6px 14px #cf78a012}
