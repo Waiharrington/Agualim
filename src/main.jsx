@@ -36,6 +36,7 @@ function App(){
  const journeyCaption=journeyStage===5?'¡Meta de hoy cumplida!':journeyStage===4?'A un paso del encuentro':journeyStage===3?'Andrea y Wai están más cerca':journeyStage===2?'Wai le ofrece un sorbito':journeyStage===1?'¡Andrea dio su primer paso!':'Wai espera a Andrea';
  useEffect(()=>{localStorage.setItem(KEY,JSON.stringify(data));},[data]);
  useEffect(()=>{if('serviceWorker'in navigator)navigator.serviceWorker.register('/sw.js').catch(()=>{})},[]);
+ useEffect(()=>{if(isAuthPreview)setAuthMode(authPreview)},[authPreview]);
  useEffect(()=>{const node=journeyRef.current;if(!node||typeof ResizeObserver==='undefined')return;const observer=new ResizeObserver(([entry])=>setJourneyWidth(entry.contentRect.width));observer.observe(node);return()=>observer.disconnect()},[user,loadingAssetsReady,bootMinimumElapsed,splashExitComplete]);
  useEffect(()=>{Object.values(hydrationJourneyAssets).flat().forEach(src=>{if(typeof src==='string'){const image=new Image();image.src=src}})},[]);
  useEffect(()=>{if(!confirmation)return;const onKeyDown=(event)=>{if(event.key==='Escape'&&!confirmBusy)setConfirmation(null)};window.addEventListener('keydown',onKeyDown);return()=>window.removeEventListener('keydown',onKeyDown)},[confirmation,confirmBusy]);
