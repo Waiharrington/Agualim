@@ -16,6 +16,8 @@ create table if not exists agualim.push_reminders (
 );
 
 alter table agualim.push_reminders enable row level security;
+grant select, insert, update, delete on agualim.push_reminders to authenticated;
+grant select, insert, update, delete on agualim.push_reminders to service_role;
 drop policy if exists "Users manage their own push reminders" on agualim.push_reminders;
 create policy "Users manage their own push reminders"
   on agualim.push_reminders for all to authenticated
