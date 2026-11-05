@@ -535,3 +535,25 @@ html,body,#root{width:100%;max-width:100%;overflow-x:clip;overscroll-behavior-x:
 .loading-progress p{font-size:clamp(15px,5vw,27px);letter-spacing:-.25px}
 .loading-progress small{font-size:clamp(9px,2.8vw,10px)}
 @media(max-width:420px){.app-shell .topbar .brand img{width:clamp(100px,29vw,120px)}.app-shell .top-actions{gap:5px}.app-shell .wai-love-pill{width:34px;height:34px;justify-content:center;gap:0;padding:0;font-size:0}.app-shell .wai-love-pill i{width:17px;height:17px;font-size:12px}.app-shell .account-logout{width:auto;height:auto;min-height:34px;padding:0 9px;font-size:9px}.app-shell .account-logout span{position:static;width:auto;height:auto;padding:0;margin:0;overflow:visible;clip:auto;white-space:nowrap;border:0}}
+
+/* Pixel-art hydration journey: independent sprites travel along the real goal bar. */
+.water-card .water-content{height:auto;min-height:244px;padding:8px 0 10px;align-items:center}
+.water-card .progress-copy{min-width:0}
+.hydration-journey{position:relative;height:184px;min-width:0;margin:14px 0 14px;overflow:hidden;border:1px solid #ecd9ee;border-radius:19px;background:radial-gradient(ellipse at 83% 7%,#f2e5fa 0,transparent 42%),radial-gradient(ellipse at 20% 100%,#e2f7f5 0,transparent 48%),linear-gradient(135deg,#fffafd,#faf5ff 56%,#f0fbfc);box-shadow:inset 0 1px 0 #fff,0 8px 22px #88649012;isolation:isolate}
+.hydration-journey:before{content:"";position:absolute;inset:auto 0 0;height:61px;background:linear-gradient(180deg,transparent,#ffffffb8);pointer-events:none;z-index:-1}
+.journey-sprite{position:absolute;bottom:43px;height:122px;width:92px;max-width:none;object-fit:contain;object-position:center bottom;transition:left .68s cubic-bezier(.2,.75,.25,1);filter:drop-shadow(0 5px 5px #49384b2b);user-select:none;-webkit-user-drag:none}
+.journey-andrea{z-index:2}
+.journey-wai{right:14px;z-index:1}
+.journey-path{position:absolute;left:14px;right:14px;bottom:27px;height:9px;border-radius:12px;background:#e8e2ee;box-shadow:inset 0 2px 4px #a48bad24,0 1px 0 #ffffffb0;overflow:visible}
+.journey-path>span{position:absolute;inset:0 auto 0 0;max-width:100%;border-radius:inherit;background:linear-gradient(90deg,#f078b0,#c07cce 52%,#57c6cf);transition:width .6s cubic-bezier(.2,.75,.25,1);box-shadow:0 0 13px #d782b366}
+.journey-marker{position:absolute;top:50%;width:11px;height:11px;border:2px solid #fff;border-radius:50%;background:#b8a5c3;transform:translate(-50%,-50%);box-shadow:0 0 0 1px #d5c5dc,0 1px 3px #59415b25;z-index:1}
+.journey-marker.marker-25{left:25%}.journey-marker.marker-50{left:50%}.journey-marker.marker-75{left:75%}
+.journey-marker:after{content:attr(data-step);position:absolute;left:50%;bottom:10px;transform:translateX(-50%);color:#9a87a2;font:700 8px/1 'DM Sans',sans-serif;white-space:nowrap}
+.journey-caption{position:absolute;left:8px;right:8px;bottom:7px;overflow:hidden;color:#806c8b;font-size:10px;line-height:13px;font-weight:700;text-align:center;text-overflow:ellipsis;white-space:nowrap}
+.journey-kiss{position:absolute;left:50%;top:46%;height:154px;width:auto;max-width:80%;object-fit:contain;transform:translate(-50%,-50%);filter:drop-shadow(0 7px 7px #49384b2b);animation:journey-reveal .42s cubic-bezier(.18,.8,.3,1) both}
+.hydration-journey.is-complete{background:radial-gradient(ellipse at 50% 48%,#fff4ca 0,#faebf7 53%,#edf9fa 100%);border-color:#f0d9eb}
+.hydration-journey.is-complete .journey-path>span{background:linear-gradient(90deg,#f2bf68,#ed80b2 48%,#b28ce2 76%,#55c8ce)}
+@keyframes journey-reveal{from{opacity:0;transform:translate(-50%,-47%) scale(.94)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+@media(max-width:760px){.water-card .water-content{min-height:236px;padding-top:5px;padding-bottom:8px}.hydration-journey{height:174px;margin:12px 0 12px}.journey-sprite{height:112px;width:84px;bottom:42px}.journey-wai{right:12px}.journey-path{left:12px;right:12px;bottom:25px;height:8px}.journey-kiss{height:144px}.journey-caption{font-size:9px}}
+@media(max-width:360px){.water-card .water-content{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}.water-card .progress-copy{padding-left:7px;padding-right:4px}.journey-sprite{height:104px;width:78px;bottom:41px}.journey-wai{right:10px}.journey-path{left:10px;right:10px;bottom:24px}.journey-kiss{height:136px}}
+@media(prefers-reduced-motion:reduce){.journey-sprite,.journey-path>span,.journey-kiss{transition:none!important;animation:none!important}}
