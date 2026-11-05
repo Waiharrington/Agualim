@@ -427,7 +427,8 @@ input[type="number"]:focus,select:focus,input[type="date"]:focus,input[type="tim
 /* Keep saved credentials and selected input text inside the Agualin palette. */
 .login-input-wrap input::selection{background:#f4a5c7;color:#51365c}
 .login-input-wrap input::-moz-selection{background:#f4a5c7;color:#51365c}
-.login-input-wrap input:-webkit-autofill,.login-input-wrap input:-webkit-autofill:hover,.login-input-wrap input:-webkit-autofill:focus,.login-input-wrap input:autofill{border-radius:0 999px 999px 0;-webkit-text-fill-color:#52395e;caret-color:#52395e;-webkit-box-shadow:0 0 0 1000px #fff8fc inset;box-shadow:0 0 0 1000px #fff8fc inset;transition:background-color 99999s ease-out 0s}
+.login-input-wrap{background:#fff8fb!important}
+.login-input-wrap input:-webkit-autofill,.login-input-wrap input:-webkit-autofill:hover,.login-input-wrap input:-webkit-autofill:focus,.login-input-wrap input:autofill{border-radius:0!important;-webkit-text-fill-color:#52395e;caret-color:#52395e;-webkit-box-shadow:0 0 0 1000px #fff8fb inset;box-shadow:0 0 0 1000px #fff8fb inset;transition:background-color 99999s ease-out 0s}
 .login-shell{background:#fff5fb url('/login/login-waves.png') center/cover fixed no-repeat}
 .login-hero{height:clamp(290px,42vh,430px);overflow:visible}
 .login-hero:before{bottom:0}
