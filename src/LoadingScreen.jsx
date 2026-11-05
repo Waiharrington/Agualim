@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 
 const FRAMES = [
-  '/loading/wai-1.webp',
-  '/loading/wai-2.webp',
-  '/loading/wai-3.webp',
-  '/loading/wai-4.webp',
+  '/loading/andrea-wai-1.webp',
+  '/loading/andrea-wai-2.webp',
+  '/loading/andrea-wai-3.webp',
+  '/loading/andrea-wai-4.webp',
 ];
 const REQUIRED_IMAGES = ['/agualin-logo.png', '/loading/waves.png', ...FRAMES];
 const FRAME_DURATIONS = [520, 360, 550, 750];
