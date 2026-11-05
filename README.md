@@ -1,6 +1,8 @@
-# Agualim
+# Agualin
 
 Aplicación web progresiva para registrar hidratación diaria, ver ritmo por horas y consultar el historial semanal. La interfaz se adapta a móvil y escritorio.
+
+Consulta [la guía de Agualin](GUIA_AGUALIN.md) para conocer las pantallas, el flujo de uso y las funciones disponibles.
 
 ## Desarrollo local
 
@@ -14,7 +16,7 @@ Al dejar las variables vacías, los registros se guardan en el navegador. Con Su
 
 Las migraciones están en `supabase/migrations/`. Usan solo el esquema `agualim`; habilitan RLS en `water_logs` y `profiles`. Cada usuario autenticado solo puede acceder a sus registros y su perfil. En el frontend se usa únicamente la clave pública `anon`.
 
-En el VPS autohospedado, el administrador debe exponer `agualim` a PostgREST y habilitar los permisos de esquema/tabla para los roles apropiados. Los ajustes globales del VPS permanecen fuera de este repositorio.
+El esquema técnico `agualim` está expuesto por PostgREST en el VPS autohospedado. Las tablas mantienen RLS y permisos acotados; el esquema se conserva con ese nombre para no romper las cuentas existentes.
 
 ## Recordatorios
 
