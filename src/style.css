@@ -708,6 +708,8 @@ html,body,#root{width:100%;max-width:100%;overflow-x:clip;overscroll-behavior-x:
 .loading-progress p,.loading-progress small{white-space:nowrap}
 .loading-progress p{font-size:clamp(15px,5vw,27px);letter-spacing:-.25px}
 .loading-progress small{font-size:clamp(9px,2.8vw,10px)}
+/* iOS Safari zooms the page when a focused form control uses text smaller than 16px. */
+@media (pointer:coarse), (max-width:760px){input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),select,textarea{font-size:16px!important}}
 @media(max-width:420px){.app-shell .topbar .brand img{width:clamp(100px,29vw,120px)}.app-shell .top-actions{gap:5px}.app-shell .wai-love-pill{width:34px;height:34px;justify-content:center;gap:0;padding:0;font-size:0}.app-shell .wai-love-pill i{width:17px;height:17px;font-size:12px}.app-shell .account-logout{width:auto;height:auto;min-height:34px;padding:0 9px;font-size:9px}.app-shell .account-logout span{position:static;width:auto;height:auto;padding:0;margin:0;overflow:visible;clip:auto;white-space:nowrap;border:0}}
 
 /* Pixel-art hydration journey: independent sprites travel along the real goal bar. */
