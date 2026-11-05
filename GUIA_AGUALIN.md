@@ -27,6 +27,7 @@ Es el panel principal de hidratación. Incluye:
 - Botones de registro rápido para 150, 250, 350 y 500 ml, además de un campo para escribir otra cantidad.
 - Los registros recientes del día y el total de vasos o entradas.
 - Un gráfico de consumo por bloques de dos horas y el bloque con más agua registrada.
+- Una opción para fotografiar el vaso y pedir a Groq una estimación visual de los mililitros. La persona revisa o corrige esa cantidad antes de guardarla; la foto no se guarda en Agualin.
 
 ### 3. Progreso
 
@@ -34,13 +35,15 @@ Resume los últimos siete días con un gráfico diario. También presenta el pro
 
 ### 4. Ajustes
 
-Se abre desde el panel principal. Permite elegir una meta diaria entre 2 y 5 litros, configurar cada cuánto avisar (30, 45, 60 o 90 minutos) y definir el horario de inicio y fin. Desde el panel principal también se pueden activar o apagar los avisos.
+Se abre desde el panel principal. Permite elegir una meta diaria entre 2 y 5 litros, configurar cada cuánto avisar entre 1 y 1440 minutos, y definir el horario de inicio y fin. Desde el panel principal también se pueden activar o apagar los avisos.
 
 ## Recordatorios
 
-Cuando vence el intervalo configurado, Agualin muestra el recordatorio. Si no se registra agua, vuelve a avisar cada dos segundos hasta que se registre una cantidad, se pause el aviso por 30 minutos o se apaguen los recordatorios. En navegadores compatibles puede vibrar.
+Cuando vence el intervalo configurado, Agualin muestra el recordatorio. Si no se registra agua, envía un segundo aviso a los 2 minutos y vuelve a avisar cada 2 minutos hasta que se registre una cantidad, se pause el aviso por 30 minutos o se apaguen los recordatorios. En navegadores compatibles puede vibrar.
 
 El navegador debe permitir las notificaciones y la aplicación debe permanecer abierta para mantener el temporizador. Los navegadores pueden reducir la frecuencia en segundo plano; las notificaciones push confiables con la aplicación cerrada necesitan un servicio de notificaciones del servidor.
+
+La estimación visual usa Groq con el modelo de visión `qwen/qwen3.8-27b`. La foto se procesa mediante una función de Vercel; Agualin no la almacena. El volumen es aproximado porque una sola foto no permite medir con exactitud el tamaño del vaso ni la cantidad servida. Para activarlo, configura `GROQ_API_KEY` como variable de entorno de servidor en Vercel; no debe llevar el prefijo `VITE_`.
 
 ## Datos e historial
 
