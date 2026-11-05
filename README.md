@@ -20,6 +20,6 @@ El esquema técnico `agualim` está expuesto por PostgREST en el VPS autohospeda
 
 ## Recordatorios
 
-Los recordatorios se pueden programar desde cada minuto hasta cada 24 horas. Si no se registra agua, llega un segundo aviso a los 2 minutos y continúa cada 2 minutos hasta registrar o pausar. Puede vibrar en navegadores compatibles. El temporizador funciona mientras la app está abierta; el navegador puede ralentizarlo en segundo plano y no puede garantizar la frecuencia con la app cerrada.
+Los recordatorios pueden llegar con la app cerrada cuando Web Push y el cron del servidor estén configurados; consulta `supabase/BACKGROUND_REMINDERS.md`. En ese modo, si no se registra agua, llega un aviso cada 2 minutos hasta registrar, pausar 30 minutos o desactivar. El navegador y el sistema operativo aún pueden silenciar o demorar avisos.
 
 La foto del vaso se analiza desde una función privada de Vercel con Groq. La clave `GROQ_API_KEY` se configura solo en el servidor; nunca se expone en el JavaScript del navegador. La estimación es visual y debe confirmarse o corregirse antes de registrar.

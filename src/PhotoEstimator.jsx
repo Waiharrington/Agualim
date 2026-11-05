@@ -77,13 +77,13 @@ export default function PhotoEstimator({ supabase, onEstimate }) {
   return <section className="photo-estimator" aria-label="Estimación de agua con foto">
     <input ref={inputRef} className="photo-input" type="file" accept="image/*" capture="environment" onChange={estimatePhoto} />
     <div className="photo-estimator-heading">
-      <div><b>¿No sabes cuántos mililitros tiene tu vaso?</b><small>Toma una foto y Groq te dará una estimación visual.</small></div>
+      <div><span className="photo-kicker">AYUDA VISUAL · OPCIONAL</span><b>¿Cuánto cabe en tu vaso?</b><small>Fotografíalo y te ayudamos a estimar los mililitros.</small></div>
       <button className="photo-button" type="button" onClick={() => inputRef.current?.click()} disabled={!available || busy}>
-        {busy ? <LoaderCircle size={16} className="spin"/> : <Camera size={16}/>} {busy ? 'Estimando…' : 'Tomar foto'}
+        {busy ? <LoaderCircle size={16} className="spin"/> : <Camera size={16}/>} {busy ? 'Estimando…' : 'Estimar con foto'}
       </button>
     </div>
-    <small className="photo-privacy">La foto se envía a Groq para analizarla; Agualin no la guarda. La cantidad es aproximada y puedes corregirla.</small>
-    {!available && <small className="photo-unavailable">La estimación por foto se activará cuando se configure la clave de Groq en el servidor.</small>}
+    <small className="photo-privacy">La foto se usa para estimar y no se guarda. Revisa los mililitros antes de registrarlos.</small>
+    {!available && <small className="photo-unavailable">La estimación aún no está disponible.</small>}
     {preview && <div className="photo-result">
       <img src={preview} alt="Foto del vaso de agua" />
       <div className="photo-result-details">

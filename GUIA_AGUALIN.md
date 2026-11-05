@@ -39,9 +39,9 @@ Se abre desde el panel principal. Permite elegir una meta diaria entre 2 y 5 lit
 
 ## Recordatorios
 
-Cuando vence el intervalo configurado, Agualin muestra el recordatorio. Si no se registra agua, envía un segundo aviso a los 2 minutos y vuelve a avisar cada 2 minutos hasta que se registre una cantidad, se pause el aviso por 30 minutos o se apaguen los recordatorios. En navegadores compatibles puede vibrar.
+Cuando vence el intervalo configurado, Agualin muestra el recordatorio. Con Web Push y el cron del servidor configurados, también puede avisar con la app cerrada. Si no se registra agua, vuelve a avisar cada 2 minutos hasta que se registre una cantidad, se pause el aviso por 30 minutos o se apaguen los recordatorios. El permiso del navegador y la configuración del teléfono controlan si esos avisos se muestran.
 
-El navegador debe permitir las notificaciones y la aplicación debe permanecer abierta para mantener el temporizador. Los navegadores pueden reducir la frecuencia en segundo plano; las notificaciones push confiables con la aplicación cerrada necesitan un servicio de notificaciones del servidor.
+Para recordatorios en segundo plano también se requiere permiso de notificaciones, conexión y que Web Push y el trabajo programado del servidor estén configurados. Sin esa configuración, los avisos solo funcionan mientras Agualin está abierta; los navegadores pueden reducir la frecuencia en segundo plano.
 
 La estimación visual usa Groq con el modelo de visión `qwen/qwen3.8-27b`. La foto se procesa mediante una función de Vercel; Agualin no la almacena. El volumen es aproximado porque una sola foto no permite medir con exactitud el tamaño del vaso ni la cantidad servida. Para activarlo, configura `GROQ_API_KEY` como variable de entorno de servidor en Vercel; no debe llevar el prefijo `VITE_`.
 
@@ -55,7 +55,7 @@ La estimación visual usa Groq con el modelo de visión `qwen/qwen3.8-27b`. La f
 
 ## Instalación y disponibilidad
 
-Agualin puede abrirse como sitio web o instalarse desde el navegador que admita aplicaciones web progresivas. En el teléfono se recomienda permitir notificaciones y mantener la aplicación disponible durante el horario de avisos.
+Agualin puede abrirse como sitio web o instalarse desde el navegador que admita aplicaciones web progresivas. Para recibir avisos con la app cerrada, instala/abre Agualin en un navegador compatible y permite las notificaciones. La configuración técnica está en `supabase/BACKGROUND_REMINDERS.md`.
 
 El sitio de producción es [agualin.vercel.app](https://agualin.vercel.app). El nombre visible dentro de la app es **Agualin**.
 
