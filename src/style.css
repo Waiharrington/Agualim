@@ -633,6 +633,11 @@ body:has(.auth-mode-signup){background:#fff5fb url('/login/login-waves-reference
 body:has(.loading-screen){background:#fff5fb url('/loading/waves.png') center/cover fixed no-repeat}
 @media(max-width:760px){.app-shell{padding-top:env(safe-area-inset-top);padding-bottom:calc(126px + env(safe-area-inset-bottom))}.alarm-banner{bottom:calc(101px + env(safe-area-inset-bottom))}.toast{bottom:calc(76px + env(safe-area-inset-bottom))}}
 .login-scene{padding-top:env(safe-area-inset-top)}
+/* Extend the login and registration artwork through the complete iPhone viewport, including the home-indicator safe area. */
+html:has(.login-shell),html:has(.login-shell) body,html:has(.login-shell) #root{width:100%;height:100%;min-height:100%;margin:0}
+body:has(.login-shell){height:100dvh;min-height:100dvh;overflow:hidden;background-position:center center;background-size:cover}
+.login-shell{position:fixed;inset:0;width:100%;height:100vh;height:100dvh;min-height:100dvh;overflow:hidden;background-position:center center!important;background-size:cover!important}
+.login-scene{height:100vh;height:100dvh;min-height:100dvh;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
 .account-logout:hover{border-color:#e9a4c2;background:#ffeaf2;color:#953d68}
 .settings-logout{width:100%;min-height:45px;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:18px;padding:10px 14px;border:1px solid #efcddd;border-radius:14px;background:#fff7fa;color:#a84974;font-size:12px;font-weight:800}
 .settings-logout:hover{border-color:#e9a4c2;background:#ffedf4;box-shadow:0 6px 14px #cf78a012}
