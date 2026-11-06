@@ -418,7 +418,7 @@ input[type="number"]:focus,select:focus,input[type="date"]:focus,input[type="tim
 .login-divider span:last-child{transform:rotate(180deg)}
 .login-toggle{margin:0;color:#755b81;font-size:13px;text-align:center}
 .login-toggle button{padding:2px 3px;border:0;border-bottom:2px solid #2ebbd0;background:none;color:#129fb6;font-size:inherit;font-weight:900}
-@keyframes login-wai-arrive{from{opacity:0;transform:translateY(13px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes login-wai-arrive{from{opacity:0;translate:0 13px;scale:.97}to{opacity:1;translate:0 0;scale:1}}
 @keyframes login-card-arrive{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:420px){.login-scene{padding-right:14px;padding-left:14px}.login-brand{height:68px}.login-hero{height:clamp(220px,34vh,300px);margin:0 -14px}.login-card{border-radius:27px}.login-input-wrap{min-height:50px}.login-input-wrap input{height:47px}.login-card form .login-submit{height:53px}}
 @media(max-height:680px){.login-brand{height:60px}.login-hero{height:220px}}
