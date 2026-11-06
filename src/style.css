@@ -638,6 +638,11 @@ html:has(.login-shell),html:has(.login-shell) body,html:has(.login-shell) #root{
 body:has(.login-shell){height:100dvh;min-height:100dvh;overflow:hidden;background-position:center center;background-size:cover}
 .login-shell{position:fixed;inset:0;width:100%;height:100vh;height:100dvh;min-height:100dvh;overflow:hidden;background-position:center center!important;background-size:cover!important}
 .login-scene{height:100vh;height:100dvh;min-height:100dvh;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
+/* In standalone iOS Safari, use the largest viewport so the background also reaches below the home-indicator safe area. */
+html:has(.login-shell),html:has(.login-shell) body,html:has(.login-shell) #root{height:100lvh;min-height:100lvh}
+body:has(.login-shell){height:100lvh;min-height:100lvh}
+.login-shell{height:100vh;height:100lvh;min-height:100lvh}
+.login-scene{height:100vh;height:100lvh;min-height:100lvh}
 /* Let the character art tuck gently behind the auth card to hide its straight image edge. */
 .login-hero{position:relative;overflow:visible}
 .login-card{position:relative;z-index:3}
